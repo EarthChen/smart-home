@@ -11,3 +11,16 @@
 
 ### smart-home-eureka-server
 服务注册中心
+
+端口：8761
+
+## smart-home-zuul-gateway
+
+zuul网关
+
+端口：9000
+
+## smart-home-dao
+数据库访问层
+
+端口：8762

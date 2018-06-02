@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>smart-home-eureka-server</module>
+        <module>smart-home-zuul-gateway</module>
+        <module>smart-home-dao</module>
     </modules>
 
     <parent>
