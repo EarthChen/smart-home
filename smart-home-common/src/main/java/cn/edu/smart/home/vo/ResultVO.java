@@ -1,4 +1,4 @@
-package cn.edu.smart.home;
+package cn.edu.smart.home.vo;
 
 import lombok.Data;
 
