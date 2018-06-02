@@ -9,6 +9,10 @@ eureka:
     # 对应注册中心url
       defaultZone: http://localhost:8761/eureka/
 
+
+server:
+  port: 9000
+
 #zuul:
 #  routes:
 #    city:
@@ -19,6 +23,15 @@ eureka:
 #      path: /data/**
 #      serviceId:  micro-weather-data-eureka-client
 
-server:
-  port: 9000
+
+
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:${server.port}/smarthome/oauth/token
+      user-authorization-uri: http://localhost:${server.port}/smarthome/oauth/authorize
+      client-id: webapp
+    resource:
+      user-info-uri: http://localhost:${server.port}/smarthome/user
+      prefer-token-info: false
 

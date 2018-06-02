@@ -24,3 +24,14 @@ zuul网关
 数据库访问层
 
 端口：8762
+
+## smart-home-auth-server
+认证授权服务器
+
+端口：8763
+
+## smart-home-domain
+领域类 供其他服务引入
+
+## smart-home-domain
+公共 供其他服务引入

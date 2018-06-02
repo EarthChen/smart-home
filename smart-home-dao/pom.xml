@@ -59,6 +59,12 @@
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>cn.edu.chzu</groupId>
+            <artifactId>smart-home-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
     </dependencies>
 
 
