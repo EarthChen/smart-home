@@ -11,5 +11,51 @@
 
     <artifactId>smart-home-auth-server</artifactId>
 
+    <dependencies>
+        <!--注册-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <!--安全-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
+        </dependency>
+
+        <!--oauth2-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+
+        <!--redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-data</artifactId>
+        </dependency>
+
+        <!--domain-->
+        <dependency>
+            <groupId>cn.edu.chzu</groupId>
+            <artifactId>smart-home-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--common-->
+        <dependency>
+            <groupId>cn.edu.chzu</groupId>
+            <artifactId>smart-home-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+
 
 </project>
