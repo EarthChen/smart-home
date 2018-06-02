@@ -1,0 +1,24 @@
+spring:
+  application:
+  # 设置服务名
+    name: smart-home-zuul-gateway
+
+eureka:
+  client:
+    serviceUrl:
+    # 对应注册中心url
+      defaultZone: http://localhost:8761/eureka/
+
+#zuul:
+#  routes:
+#    city:
+#      path: /city/**
+#      serviceId: msa-weather-collection-eureka-feign
+#
+#    data:
+#      path: /data/**
+#      serviceId:  micro-weather-data-eureka-client
+
+server:
+  port: 9000
+
