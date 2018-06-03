@@ -1,7 +1,10 @@
-package cn.edu.smart.home.domain;
+package cn.edu.smart.home.domain.user;
 
+import com.baomidou.mybatisplus.annotations.TableField;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,28 +14,47 @@ import java.util.Set;
 
 /**
  * 用户
+ *
  * @author: EarthChen
  * @date: 2018/06/02
  */
 @Data
-@Builder
-public class User extends SuperEntity<User> implements UserDetails {
+public class SysUser extends SuperEntity<SysUser> implements UserDetails {
 
     private static final long serialVersionUID = -2640006241935295774L;
 
+    /**
+     * 用户名
+     */
     private String username;
+
+    /**
+     * 密码
+     */
     private String password;
 
+    /**
+     * 邮箱
+     */
     private String email;
+
+    /**
+     * 头像
+     */
     private String imageUrl;
 
-    private Set<Role> roles = new HashSet<>();
+
+    @TableField(exist = false)
+    private Set<SysRole> roles = new HashSet<>();
+
+
+
 
     @Override
     public Set<GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> authorities = new HashSet<>();
-        for (Role role : this.roles) {
-            for (Authority authority : role.getAuthorities()) {
+        for (SysRole role : this.roles) {
+            for (SysAuthority authority : role.getAuthorities()) {
                 authorities.add(new SimpleGrantedAuthority(authority.getValue()));
             }
         }

@@ -41,10 +41,10 @@
             <artifactId>spring-security-data</artifactId>
         </dependency>
 
-        <!--domain-->
+        <!--dao-->
         <dependency>
             <groupId>cn.edu.chzu</groupId>
-            <artifactId>smart-home-domain</artifactId>
+            <artifactId>smart-home-dao</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -55,7 +55,28 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>

@@ -1,4 +1,4 @@
-package cn.edu.smart.home.domain;
+package cn.edu.smart.home.domain.user;
 
 import com.baomidou.mybatisplus.activerecord.Model;
 import lombok.Getter;

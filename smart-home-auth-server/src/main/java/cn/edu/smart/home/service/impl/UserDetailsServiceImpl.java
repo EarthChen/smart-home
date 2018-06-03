@@ -1,14 +1,12 @@
 package cn.edu.smart.home.service.impl;
 
-import cn.edu.smart.home.domain.User;
+import cn.edu.smart.home.domain.user.SysUser;
 import cn.edu.smart.home.service.UserService;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import java.util.Set;
 
 /**
  * @author: EarthChen
@@ -19,7 +17,7 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        User user = User.builder().build();
+        SysUser user = new SysUser();
         return user;
 //        Optional<SysUser> realUser = sysUserRepository.findOneWithRolesByUsername(lowcaseUsername);
 //
