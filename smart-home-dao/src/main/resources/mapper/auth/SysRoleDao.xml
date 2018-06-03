@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.chzu.smart.home.dao.auth.SysRoleDao">
+
+    <resultMap id="roleAuthority" type="cn.edu.chzu.smart.home.domain.user.SysRole">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="value" property="value" jdbcType="VARCHAR"/>
+        <collection property="authorities" column="id"
+                    select="cn.edu.chzu.smart.home.dao.auth.SysAuthorityDao.selectById"/>
+    </resultMap>
+
+
+    <select id="findById" resultType="cn.edu.chzu.smart.home.domain.user.SysRole">
+        select *
+        from sys_role
+        where id = #{id}
+    </select>
+
+
+
+    <select id="findRoleByUserId" resultMap="roleAuthority">
+        select
+            r.id,
+            name,
+            value
+        from sys_role r left join sys_user_role ur on r.id = ur.role_id
+        where ur.user_id = #{userId}
+    </select>
+
+
+</mapper>

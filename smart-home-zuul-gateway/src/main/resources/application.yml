@@ -13,25 +13,27 @@ eureka:
 server:
   port: 9000
 
-#zuul:
-#  routes:
-#    city:
-#      path: /city/**
-#      serviceId: msa-weather-collection-eureka-feign
-#
-#    data:
-#      path: /data/**
-#      serviceId:  micro-weather-data-eureka-client
+zuul:
+  routes:
+    uaa:
+      path: /auth/**
+      sensitiveHeaders:
+      serviceId: auth-server
+    order:
+      path: /kitchen/**
+      sensitiveHeaders:
+      serviceId: smart-home-kitchen-server
+  add-proxy-headers: true
 
 
 
 security:
   oauth2:
     client:
-      access-token-uri: http://localhost:${server.port}/smarthome/oauth/token
-      user-authorization-uri: http://localhost:${server.port}/smarthome/oauth/authorize
+      access-token-uri: http://localhost:${server.port}/auth/oauth/token
+      user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize
       client-id: webapp
     resource:
-      user-info-uri: http://localhost:${server.port}/smarthome/user
+      user-info-uri: http://localhost:${server.port}/auth/user
       prefer-token-info: false
 

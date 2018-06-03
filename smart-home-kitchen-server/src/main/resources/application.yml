@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: smart-home-kitchen-server
+
+  redis:
+    host: 127.0.0.1
+
+server:
+  port: 8763
+
+management.security.enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+feign:
+  hystirx:
+    enable: true
+
+security:
+  oauth2:
+    resource:
+      id: smart-home-kitchen-server
+      user-info-uri: http://localhost:9000/auth/user
+      prefer-token-info: false

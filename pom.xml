@@ -15,6 +15,7 @@
         <module>smart-home-auth-server</module>
         <module>smart-home-domain</module>
         <module>smart-home-common</module>
+        <module>smart-home-kitchen-server</module>
     </modules>
 
     <parent>
