@@ -1,6 +1,7 @@
 package cn.edu.chzu.smart.home.domain.user;
 
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -27,7 +28,10 @@ public class SysUser extends SuperEntity<SysUser> implements UserDetails {
 
     /**
      * 密码
+     * <p>
+     * 不显示给前端
      */
+    @JsonIgnore
     private String password;
 
     /**
@@ -41,6 +45,10 @@ public class SysUser extends SuperEntity<SysUser> implements UserDetails {
     private String imageUrl;
 
 
+    /**
+     * 角色 数据库表不存在
+     */
+    @JsonIgnore
     @TableField(exist = false)
     private Set<SysRole> roles;
 

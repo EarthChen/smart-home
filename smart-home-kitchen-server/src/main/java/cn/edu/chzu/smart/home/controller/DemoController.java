@@ -22,8 +22,8 @@ public class DemoController {
     @PreAuthorize("hasAuthority('query')")
     public Object getDemo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-
+        System.out.println(authentication.getName());
+        System.out.println(authentication.getAuthorities());
         return authentication;
     }
 

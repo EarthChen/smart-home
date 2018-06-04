@@ -1,6 +1,7 @@
 package cn.edu.chzu.smart.home.domain.user;
 
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.util.HashSet;
@@ -27,6 +28,7 @@ public class SysRole extends SuperEntity<SysRole> {
      */
     private String value;
 
+    @JsonIgnore
     @TableField(exist = false)
     private Set<SysAuthority> authorities = new HashSet<>();
 }

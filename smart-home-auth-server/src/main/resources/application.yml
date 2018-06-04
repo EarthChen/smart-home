@@ -92,3 +92,24 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+
+# 配置客户端
+server-security:
+  clientPropertiesList:
+    - clientName: android
+      clientSecret: android
+      scopes: xx
+      authorizedGrantTypes:
+        - password
+        - authorization_code
+        - refresh_token
+    - clientName: webapp
+      scopes: all
+      authorizedGrantTypes:
+        - implicit
+    - clientName: browser
+      scopes: all
+      authorizedGrantTypes:
+        - refresh_token
+        - password
+

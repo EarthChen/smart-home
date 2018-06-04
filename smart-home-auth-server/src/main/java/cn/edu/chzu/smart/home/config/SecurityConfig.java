@@ -1,6 +1,6 @@
 package cn.edu.chzu.smart.home.config;
 
-import cn.edu.chzu.smart.home.service.impl.UserDetailsServiceImpl;
+import cn.edu.chzu.smart.home.service.impl.UserServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     @Bean
     public UserDetailsService userDetailsService() {
-        return new UserDetailsServiceImpl();
+        return new UserServiceImpl();
     }
 
     @Bean

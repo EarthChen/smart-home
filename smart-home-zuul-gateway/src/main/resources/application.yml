@@ -15,11 +15,11 @@ server:
 
 zuul:
   routes:
-    uaa:
+    auth-server:
       path: /auth/**
       sensitiveHeaders:
       serviceId: auth-server
-    order:
+    kitchen-server:
       path: /kitchen/**
       sensitiveHeaders:
       serviceId: smart-home-kitchen-server
@@ -34,6 +34,6 @@ security:
       user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize
       client-id: webapp
     resource:
-      user-info-uri: http://localhost:${server.port}/auth/user
+      user-info-uri: http://localhost:${server.port}/auth/user/current
       prefer-token-info: false
 

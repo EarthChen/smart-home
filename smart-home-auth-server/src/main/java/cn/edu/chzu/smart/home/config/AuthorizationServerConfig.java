@@ -1,6 +1,9 @@
 package cn.edu.chzu.smart.home.config;
 
+import cn.edu.chzu.smart.home.config.properites.ClientProperties;
+import cn.edu.chzu.smart.home.config.properites.ServerSecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -11,7 +14,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.A
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
+
+import java.util.List;
 
 /**
  * @author: EarthChen
@@ -30,6 +36,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Autowired
     private UserDetailsService userDetailsService;
 
+
+    @Autowired
+    @Qualifier("myClientDetailsServiceImpl")
+    private ClientDetailsService clientDetailsService;
 
     @Bean
     public RedisTokenStore tokenStore() {
@@ -55,14 +65,18 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
-                .withClient("android")
-                .scopes("xx")
-                .secret("android")
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token")
-                .and()
-                .withClient("webapp")
-                .scopes("xx")
-                .authorizedGrantTypes("implicit");
+
+
+        clients.withClientDetails(clientDetailsService);
+
+//        clients.inMemory()
+//                .withClient("android")
+//                .scopes("xx")
+//                .secret("android")
+//                .authorizedGrantTypes("password", "authorization_code", "refresh_token")
+//                .and()
+//                .withClient("webapp")
+//                .scopes("xx")
+//                .authorizedGrantTypes("implicit");
     }
 }
