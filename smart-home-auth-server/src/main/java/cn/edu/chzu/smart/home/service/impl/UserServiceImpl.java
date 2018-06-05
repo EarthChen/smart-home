@@ -1,9 +1,6 @@
 package cn.edu.chzu.smart.home.service.impl;
 
-import cn.edu.chzu.smart.home.dao.auth.SysAuthorityDao;
-import cn.edu.chzu.smart.home.dao.auth.SysRoleDao;
 import cn.edu.chzu.smart.home.dao.auth.SysUserDao;
-import cn.edu.chzu.smart.home.domain.user.SysRole;
 import cn.edu.chzu.smart.home.domain.user.SysUser;
 import cn.edu.chzu.smart.home.enums.ResultEnum;
 import cn.edu.chzu.smart.home.enums.RoleEnum;
@@ -13,7 +10,6 @@ import cn.edu.chzu.smart.home.service.SysUserRoleService;
 import cn.edu.chzu.smart.home.service.UserService;
 import cn.edu.chzu.smart.home.vo.RegisterVO;
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -104,5 +100,10 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         RegisterVO registerVO = new RegisterVO();
         BeanUtils.copyProperties(sysUser, registerVO);
         return registerVO;
+    }
+
+    @Override
+    public SysUser getSysUserByUsername(String username) {
+        return sysUserDao.findOneWithRolesByUsername(username);
     }
 }

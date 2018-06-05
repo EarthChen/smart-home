@@ -55,6 +55,13 @@
             <version>${project.version}</version>
         </dependency>
 
+        <!--redis-->
+        <dependency>
+            <groupId>cn.edu.chzu</groupId>
+            <artifactId>smart-home-redis</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

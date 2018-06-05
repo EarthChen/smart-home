@@ -29,4 +29,13 @@ public interface UserService {
      * @return
      */
     RegisterVO registerUser(RegisterForm registerForm);
+
+
+    /**
+     * 根据用户名查询用户信息
+     *
+     * @param username
+     * @return
+     */
+    SysUser getSysUserByUsername(String username);
 }

@@ -48,7 +48,7 @@ public class SysUser extends SuperEntity<SysUser> implements UserDetails {
     /**
      * 角色 数据库表不存在
      */
-    @JsonIgnore
+//    @JsonIgnore
     @TableField(exist = false)
     private Set<SysRole> roles;
 

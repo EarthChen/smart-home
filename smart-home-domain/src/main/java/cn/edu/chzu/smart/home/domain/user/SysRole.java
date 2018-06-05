@@ -28,7 +28,7 @@ public class SysRole extends SuperEntity<SysRole> {
      */
     private String value;
 
-    @JsonIgnore
+//    @JsonIgnore
     @TableField(exist = false)
     private Set<SysAuthority> authorities = new HashSet<>();
 }
