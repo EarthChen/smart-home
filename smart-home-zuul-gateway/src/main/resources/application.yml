@@ -7,7 +7,7 @@ eureka:
   client:
     serviceUrl:
     # 对应注册中心url
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.85.208:8761/eureka/
 
 
 server:
@@ -30,10 +30,10 @@ zuul:
 security:
   oauth2:
     client:
-      access-token-uri: http://localhost:${server.port}/auth/oauth/token
-      user-authorization-uri: http://localhost:${server.port}/auth/oauth/authorize
+      access-token-uri: http://192.168.85.208:${server.port}/auth/oauth/token
+      user-authorization-uri: http://192.168.85.208:${server.port}/auth/oauth/authorize
       client-id: webapp
     resource:
-      user-info-uri: http://localhost:${server.port}/auth/user/current
+      user-info-uri: http://192.168.85.208:${server.port}/auth/user/current
       prefer-token-info: false
 

@@ -3,7 +3,7 @@ spring:
     name: smart-home-kitchen-server
 
   redis:
-    host: 127.0.0.1
+    host: 192.168.85.208
 
 server:
   port: 8763
@@ -13,7 +13,7 @@ management.security.enabled: false
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.85.208:8761/eureka/
 
 
 feign:
@@ -24,5 +24,5 @@ security:
   oauth2:
     resource:
       id: smart-home-kitchen-server
-      user-info-uri: http://localhost:9000/auth/user/current
+      user-info-uri: http://192.168.85.208:9000/auth/user/current
       prefer-token-info: false
