@@ -1,20 +1,20 @@
 package cn.edu.chzu.smart.home.controller;
 
-import cn.edu.chzu.smart.home.dao.auth.SysUserDao;
-import cn.edu.chzu.smart.home.domain.user.SysUser;
+import cn.edu.chzu.smart.home.domain.SysUser;
 import cn.edu.chzu.smart.home.form.RegisterForm;
 import cn.edu.chzu.smart.home.key.auth.SysUserKey;
 import cn.edu.chzu.smart.home.service.RedisService;
 import cn.edu.chzu.smart.home.service.UserService;
 import cn.edu.chzu.smart.home.vo.RegisterVO;
 import cn.edu.chzu.smart.home.vo.ResultVO;
+import cn.edu.chzu.smart.home.vo.swagger.RegisterSwaggerVO;
+import cn.edu.chzu.smart.home.vo.swagger.SysUserSwaggerVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
@@ -29,6 +29,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/user")
 @Slf4j
+@Api(value = "User", tags = {"User"}, description = "用户相关")
 public class UserController {
 
 
@@ -52,6 +53,7 @@ public class UserController {
      * @param user
      * @return
      */
+    @ApiOperation(value = "获取当前用户认证信息", httpMethod = "GET", response = Principal.class)
     @GetMapping("/current")
     public Object user(Principal user) {
         boolean exist = redisService.exists(SysUserKey.getByUsernameWithExpire, user.getName());
@@ -76,6 +78,7 @@ public class UserController {
      * @param user
      * @return
      */
+    @ApiOperation(value = "获取当前用户详细信息", httpMethod = "GET", response = SysUserSwaggerVO.class)
     @GetMapping("/me")
     public ResultVO me(Principal user) {
         SysUser sysUser = redisService.get(SysUserKey.getByUsernameWithExpire, user.getName(), SysUser.class);
@@ -92,7 +95,8 @@ public class UserController {
      * @return
      */
     @PostMapping("/register")
-    public ResultVO register(@Valid RegisterForm registerForm) {
+    @ApiOperation(value = "用户注册", httpMethod = "POST", response = RegisterSwaggerVO.class)
+    public ResultVO register(@RequestBody @Valid RegisterForm registerForm) {
         RegisterVO registerVO = userService.registerUser(registerForm);
         return ResultVO.success(registerVO);
     }

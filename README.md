@@ -13,13 +13,6 @@
 
 # 服务
 
-## smart-home-domain
-领域类 供其他服务引入
-
-## smart-home-dao
-数据库访问层  供其他服务引入
-
-
 ## smart-home-common
 公共 供其他服务引入
 
@@ -38,6 +31,12 @@ zuul网关
 认证授权服务器
 
 端口：8762
+
+## smart-home-swagger
+
+swagger支持，在需要swagger的模块中引入即可
+
+swagger相关内容自行学习
 
 ### 端点
 
@@ -314,32 +313,4 @@ $ sudo docker build -t <你的镜像名>:<tag> .
 $ sudo docker run -p <宿主机端口>:<容器内端口> --name=<容器名> -d <你的镜像名>:<tag>
 ```
 >相关命令的含义，自行学习docker
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,6 +1,6 @@
 package cn.edu.chzu.smart.home.service;
 
-import cn.edu.chzu.smart.home.domain.user.SysUser;
+import cn.edu.chzu.smart.home.domain.SysUser;
 import cn.edu.chzu.smart.home.form.RegisterForm;
 import cn.edu.chzu.smart.home.vo.RegisterVO;
 

@@ -1,7 +1,6 @@
 package cn.edu.chzu.smart.home.service.impl;
 
 import cn.edu.chzu.smart.home.ApplicationTests;
-import cn.edu.chzu.smart.home.domain.user.SysUser;
 import cn.edu.chzu.smart.home.form.RegisterForm;
 import cn.edu.chzu.smart.home.service.UserService;
 import cn.edu.chzu.smart.home.vo.RegisterVO;
@@ -9,8 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import static org.junit.Assert.*;
 
 /**
  * @author: EarthChen

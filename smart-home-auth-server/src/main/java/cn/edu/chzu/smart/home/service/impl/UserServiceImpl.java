@@ -1,7 +1,7 @@
 package cn.edu.chzu.smart.home.service.impl;
 
-import cn.edu.chzu.smart.home.dao.auth.SysUserDao;
-import cn.edu.chzu.smart.home.domain.user.SysUser;
+import cn.edu.chzu.smart.home.dao.SysUserDao;
+import cn.edu.chzu.smart.home.domain.SysUser;
 import cn.edu.chzu.smart.home.enums.ResultEnum;
 import cn.edu.chzu.smart.home.enums.RoleEnum;
 import cn.edu.chzu.smart.home.exception.AuthException;

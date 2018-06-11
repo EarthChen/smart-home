@@ -1,14 +1,12 @@
 package cn.edu.chzu.smart.home.service.impl;
 
-import cn.edu.chzu.smart.home.dao.auth.SysUserRoleDao;
-import cn.edu.chzu.smart.home.domain.user.SysUserRole;
+import cn.edu.chzu.smart.home.dao.SysUserRoleDao;
+import cn.edu.chzu.smart.home.domain.SysUserRole;
 import cn.edu.chzu.smart.home.enums.ResultEnum;
 import cn.edu.chzu.smart.home.exception.AuthException;
 import cn.edu.chzu.smart.home.service.SysUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.UnknownFormatConversionException;
 
 /**
  * 用户角色关系服务

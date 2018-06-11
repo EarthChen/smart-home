@@ -11,12 +11,11 @@
     <modules>
         <module>smart-home-eureka-server</module>
         <module>smart-home-zuul-gateway</module>
-        <module>smart-home-dao</module>
         <module>smart-home-auth-server</module>
-        <module>smart-home-domain</module>
         <module>smart-home-common</module>
         <module>smart-home-kitchen-server</module>
         <module>smart-home-redis</module>
+        <module>smart-home-swagger2</module>
     </modules>
 
     <parent>
@@ -32,6 +31,7 @@
         <mybatisplus-spring-boot-starter.version>1.0.5</mybatisplus-spring-boot-starter.version>
         <mybatisplus.version>2.1.4</mybatisplus.version>
         <fastjson.version>1.2.47</fastjson.version>
+        <swagger2.version>2.8.0</swagger2.version>
     </properties>
 
     <dependencyManagement>

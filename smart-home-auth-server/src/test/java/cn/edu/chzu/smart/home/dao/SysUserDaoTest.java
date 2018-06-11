@@ -1,13 +1,10 @@
 package cn.edu.chzu.smart.home.dao;
 
 import cn.edu.chzu.smart.home.ApplicationTests;
-import cn.edu.chzu.smart.home.dao.auth.SysUserDao;
-import cn.edu.chzu.smart.home.domain.user.SysUser;
+import cn.edu.chzu.smart.home.domain.SysUser;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Optional;
 
 /**
  * @author: EarthChen
