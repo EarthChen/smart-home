@@ -78,7 +78,6 @@ security:
       user-info-uri: http://localhost:9000/auth/user/current
       prefer-token-info: false
 ```
-
 ## smart-home-kitchen-server
 
 厨房服务

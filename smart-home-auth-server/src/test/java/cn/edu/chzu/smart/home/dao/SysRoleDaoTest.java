@@ -1,7 +1,7 @@
 package cn.edu.chzu.smart.home.dao;
 
 import cn.edu.chzu.smart.home.ApplicationTests;
-import cn.edu.chzu.smart.home.domain.SysRole;
+import cn.edu.chzu.smart.home.domain.auth.SysRole;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

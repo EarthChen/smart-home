@@ -1,7 +1,7 @@
 package cn.edu.chzu.smart.home.dao;
 
 import cn.edu.chzu.smart.home.SuperMapper;
-import cn.edu.chzu.smart.home.domain.SysAuthority;
+import cn.edu.chzu.smart.home.domain.auth.SysAuthority;
 import org.springframework.stereotype.Repository;
 
 import java.util.Set;

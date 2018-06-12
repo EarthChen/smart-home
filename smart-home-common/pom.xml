@@ -36,19 +36,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!--安全-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-security</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.edu.chzu</groupId>
-            <artifactId>smart-home-swagger2</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-
     </dependencies>
 
 

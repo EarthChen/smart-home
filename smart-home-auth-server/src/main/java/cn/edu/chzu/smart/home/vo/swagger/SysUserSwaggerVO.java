@@ -1,6 +1,6 @@
 package cn.edu.chzu.smart.home.vo.swagger;
 
-import cn.edu.chzu.smart.home.domain.SysUser;
+import cn.edu.chzu.smart.home.domain.auth.SysUser;
 import cn.edu.chzu.smart.home.vo.SwaggerVO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: smart-home-mattress-bedroom-server
+
+
+server:
+  port: 8765
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.85.208:8761/eureka/
+
+feign:
+  hystirx:
+    enable: true
+

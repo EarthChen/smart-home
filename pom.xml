@@ -16,6 +16,8 @@
         <module>smart-home-kitchen-server</module>
         <module>smart-home-redis</module>
         <module>smart-home-swagger2</module>
+        <module>smart-home-bedroom-server</module>
+        <module>smart-home-mattress-sensor-service</module>
     </modules>
 
     <parent>

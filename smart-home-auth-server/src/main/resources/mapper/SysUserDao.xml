@@ -7,7 +7,7 @@
     </sql>
 
 
-    <resultMap id="userRole" type="cn.edu.chzu.smart.home.domain.SysUser">
+    <resultMap id="userRole" type="cn.edu.chzu.smart.home.domain.auth.SysUser">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="username" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
