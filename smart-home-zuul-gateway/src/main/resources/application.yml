@@ -23,6 +23,11 @@ zuul:
       path: /kitchen/**
       sensitiveHeaders:
       serviceId: smart-home-kitchen-server
+    gps-server:
+      path: /gps/**
+      sensitiveHeaders:
+      serviceId: smart-home-gps-server
+
   add-proxy-headers: true
 
 
