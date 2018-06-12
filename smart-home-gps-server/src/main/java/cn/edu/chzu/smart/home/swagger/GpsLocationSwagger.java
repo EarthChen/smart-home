@@ -2,7 +2,6 @@ package cn.edu.chzu.smart.home.swagger;
 
 
 import cn.edu.chzu.smart.home.domain.GpsEntity;
-import cn.edu.chzu.smart.home.domain.SysUser;
 import cn.edu.chzu.smart.home.vo.SwaggerVO;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

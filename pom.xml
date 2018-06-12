@@ -18,6 +18,7 @@
         <module>smart-home-swagger2</module>
         <module>smart-home-bedroom-server</module>
         <module>smart-home-mattress-sensor-service</module>
+        <module>smart-home-gps-server</module>
     </modules>
 
     <parent>
