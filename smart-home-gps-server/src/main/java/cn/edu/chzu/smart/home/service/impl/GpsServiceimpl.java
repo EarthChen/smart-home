@@ -14,6 +14,7 @@ import java.util.List;
  */
 @Service
 public class GpsServiceimpl implements GpsService {
+
     @Autowired
     private GpsDao gpsDao;
 

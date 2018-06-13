@@ -1,7 +1,5 @@
 package cn.edu.chzu.smart.home.domain;
 
-import cn.edu.chzu.smart.home.domain.auth.SysAuthority;
-import cn.edu.chzu.smart.home.domain.auth.SysRole;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;

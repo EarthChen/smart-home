@@ -10,10 +10,20 @@ import java.util.List;
  */
 
 public interface GpsService {
-    /*通过id查找经纬度*/
+
+    /**
+     * 通过id查找经纬度
+     *
+     * @param id
+     * @return
+     */
     GpsEntity queryById(long id);
 
-    /*获取经纬度列表*/
+    /**
+     * 获取经纬度列表
+     *
+     * @return
+     */
     List<GpsEntity> queryAll();
 
 }

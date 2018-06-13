@@ -1,6 +1,6 @@
 package cn.edu.chzu.smart.home.domain;
 
-import cn.edu.chzu.smart.home.domain.auth.SysAuthority;
+import cn.edu.chzu.smart.home.domain.SysAuthority;
 import com.baomidou.mybatisplus.annotations.TableField;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;

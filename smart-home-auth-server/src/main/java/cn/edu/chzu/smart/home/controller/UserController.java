@@ -7,8 +7,6 @@ import cn.edu.chzu.smart.home.service.RedisService;
 import cn.edu.chzu.smart.home.service.UserService;
 import cn.edu.chzu.smart.home.vo.RegisterVO;
 import cn.edu.chzu.smart.home.vo.ResultVO;
-import cn.edu.chzu.smart.home.vo.swagger.RegisterSwaggerVO;
-import cn.edu.chzu.smart.home.vo.swagger.SysUserSwaggerVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -78,9 +76,9 @@ public class UserController {
      * @param user
      * @return
      */
-    @ApiOperation(value = "获取当前用户详细信息", httpMethod = "GET", response = SysUserSwaggerVO.class)
+    @ApiOperation(value = "获取当前用户详细信息", httpMethod = "GET")
     @GetMapping("/me")
-    public ResultVO me(Principal user) {
+    public ResultVO<SysUser> me(Principal user) {
         SysUser sysUser = redisService.get(SysUserKey.getByUsernameWithExpire, user.getName(), SysUser.class);
         if (sysUser == null) {
             sysUser = userService.getSysUserByUsername(user.getName());
@@ -95,8 +93,8 @@ public class UserController {
      * @return
      */
     @PostMapping("/register")
-    @ApiOperation(value = "用户注册", httpMethod = "POST", response = RegisterSwaggerVO.class)
-    public ResultVO register(@RequestBody @Valid RegisterForm registerForm) {
+    @ApiOperation(value = "用户注册", httpMethod = "POST")
+    public ResultVO<RegisterVO> register(@RequestBody @Valid RegisterForm registerForm) {
         RegisterVO registerVO = userService.registerUser(registerForm);
         return ResultVO.success(registerVO);
     }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.chzu.smart.home.dao.SysRoleDao">
 
-    <resultMap id="roleAuthority" type="cn.edu.chzu.smart.home.domain.auth.SysRole">
+    <resultMap id="roleAuthority" type="cn.edu.chzu.smart.home.domain.SysRole">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="value" property="value" jdbcType="VARCHAR"/>
@@ -11,7 +11,7 @@
     </resultMap>
 
 
-    <select id="findById" resultType="cn.edu.chzu.smart.home.domain.auth.SysRole">
+    <select id="findById" resultType="cn.edu.chzu.smart.home.domain.SysRole">
         select *
         from sys_role
         where id = #{id}
